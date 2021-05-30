@@ -1,3 +1,4 @@
+import themes from "./themes.js";
 import { gameElement, Element } from "./gameElement.js";
 
 interface Theme {
@@ -11,6 +12,7 @@ export class subjectSelect {
 
   constructor() {
     console.log("Start subjectSelector");
+    this.themes = themes;
     this.generateTheme();
   }
 
