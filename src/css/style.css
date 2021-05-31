@@ -1,0 +1,22 @@
+body {
+    overflow: hidden;
+}
+
+subjectContainer, labelContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+subjectContainer img {
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 200px;
+    height: 200px;
+}
+
+labelContainer {
+    color: #fff;
+}
