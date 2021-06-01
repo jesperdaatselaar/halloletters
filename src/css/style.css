@@ -1,12 +1,26 @@
 body {
     overflow: hidden;
+    height: 100vh;
 }
 
-subjectContainer, labelContainer {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
+/* LETTER RECOGNITION LEVEL */
+
+gameContainer {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.8fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". . ."
+        ". subjectImage ."
+        ". label .";
+}
+
+subjectContainer {
+    grid-area: subjectImage;
+    align-self: center;
+    margin: auto;
 }
 
 subjectContainer img {
@@ -18,5 +32,10 @@ subjectContainer img {
 }
 
 labelContainer {
+    margin: 0 auto;
+    grid-area: label;
     color: #fff;
+    font-size: 38px;
 }
+
+/* END LETTER RECOGNITION LEVEL */
