@@ -1,8 +1,8 @@
 export interface Element {
-  name: String;
-  word: String;
-  image: String;
-  sound: String;
+  name: string;
+  word: string;
+  image: string | undefined;
+  sound: string;
 }
 
 export class gameElement {
