@@ -1,60 +1,64 @@
 body {
-    overflow: hidden;
-    height: 100vh;
+  overflow: hidden;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* LETTER RECOGNITION LEVEL */
 
 gameContainer {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.8fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        ". . ."
-        ". subjectImage ."
-        ". label .";
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 0.8fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    ". subjectImage ."
+    ". label .";
 }
 
 subjectContainer {
-    grid-area: subjectImage;
-    align-self: center;
-    margin: auto;
+  grid-area: subjectImage;
+  align-self: center;
+  margin: auto;
 }
 
 subjectContainer img {
-    display: flex;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 200px;
-    height: 200px;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 200px;
+  height: 200px;
 }
 
 labelContainer {
-    margin: 0 auto;
-    grid-area: label;
-    color: #fff;
-    font-size: 38px;
+  margin: 0 auto;
+  grid-area: label;
+  color: #fff;
+  font-size: 38px;
 }
 
 .nextLevelButton {
-    background-color: #00509D;
-    color: #00296B;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* White border around icon */
-    font-size: 38px;
+  background-color: #00509d;
+  color: #00296b;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff; /* White border around icon */
+  font-size: 38px;
 
-    padding: 10px 75px;
-    border-radius: 1000px;
-    border: 0;
+  padding: 10px 75px;
+  border-radius: 1000px;
+  border: 0;
 
-    transition: 0.3s;
+  transition: 0.3s;
 }
 
 .nextLevelButton:hover {
-    background-color: #00296B;
-    color: #00509D;
-    cursor: pointer;
+  background-color: #00296b;
+  color: #00509d;
+  cursor: pointer;
 }
 
 /* END LETTER RECOGNITION LEVEL */
