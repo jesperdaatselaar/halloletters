@@ -13,14 +13,18 @@ export class subjectSelect {
   constructor() {
     console.log("Start subjectSelector");
     this.themes = themes;
-    this.generateTheme();
+    this.randomTheme();
+    this.generateHTML();
   }
 
-  generateTheme() {
-    // TODO: Get random theme
+  randomTheme() {
+    this.currentTheme = themes[Math.floor(Math.random() * themes.length)];
   }
 
   generateHTML() {
     // TODO: Generate every theme element
+    for (let i = 0; i < this.currentTheme.elements.length; i++) {
+      new gameElement(this.currentTheme.elements[i]);
+    }
   }
 }

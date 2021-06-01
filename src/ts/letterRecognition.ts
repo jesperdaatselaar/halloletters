@@ -1,6 +1,7 @@
+let gameContainer = document.querySelector("gameContainer");
+
 export class letterRecognition {
 
-    gameContainer : HTMLElement;
     subjectImage : string;
     word : string;
 
@@ -14,10 +15,6 @@ export class letterRecognition {
   }
 
   create() {
-      // Create game container
-      this.gameContainer = document.createElement("gameContainer");
-      document.body.appendChild(this.gameContainer);
-      
       this.drawSubject();
       this.drawWord();
   }
@@ -28,7 +25,7 @@ export class letterRecognition {
       let subjectImg = document.createElement("img");
       subjectContainer.appendChild(subjectImg);
       // Draw container on screen
-      this.gameContainer.appendChild(subjectContainer);
+      gameContainer?.appendChild(subjectContainer);
 
       subjectImg.src = `./assets/${this.subjectImage}`;
   }
@@ -39,7 +36,7 @@ export class letterRecognition {
       let wordLabel = document.createElement("label");
       labelContainer.appendChild(wordLabel);
       // Draw container on screen
-      this.gameContainer.appendChild(labelContainer);
+      gameContainer?.appendChild(labelContainer);
 
       wordLabel.innerText = this.word;
   }

@@ -1,11 +1,14 @@
+import { subjectSelect } from "./subjectSelect.js";
+
+let root: HTMLElement = document.querySelector("gameContainer")!;
 export class game {
   constructor() {
     console.log("Game started");
-
     this.drawBackground();
+    new subjectSelect();
   }
 
   drawBackground() {
-    document.body.style.backgroundImage = "url(./assets/level1_bg.jpg";
+    root.style.backgroundImage = `url("./assets/background.png")`;
   }
 }
