@@ -13,11 +13,11 @@ export class subjectSelect {
   constructor() {
     console.log("Start subjectSelector");
     this.themes = themes;
-    this.generateTheme();
+    this.randomTheme();
   }
 
-  generateTheme() {
-    // TODO: Get random theme
+  randomTheme() {
+    this.currentTheme = themes[Math.floor(Math.random() * themes.length)];
   }
 
   generateHTML() {
