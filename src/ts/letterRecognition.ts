@@ -1,5 +1,6 @@
 export class letterRecognition {
 
+    gameContainer : HTMLElement;
     subjectImage : string;
     word : string;
 
@@ -7,12 +8,16 @@ export class letterRecognition {
       console.log("LetterRegonition created");
       
       this.subjectImage = "moon_level1.png";
-      this.word = "..oon";
+      this.word = "..aan";
 
       this.create();
   }
 
   create() {
+      // Create game container
+      this.gameContainer = document.createElement("gameContainer");
+      document.body.appendChild(this.gameContainer);
+      
       this.drawSubject();
       this.drawWord();
   }
@@ -23,7 +28,7 @@ export class letterRecognition {
       let subjectImg = document.createElement("img");
       subjectContainer.appendChild(subjectImg);
       // Draw container on screen
-      document.body.appendChild(subjectContainer);
+      this.gameContainer.appendChild(subjectContainer);
 
       subjectImg.src = `./assets/${this.subjectImage}`;
   }
@@ -34,7 +39,7 @@ export class letterRecognition {
       let wordLabel = document.createElement("label");
       labelContainer.appendChild(wordLabel);
       // Draw container on screen
-      document.body.appendChild(labelContainer);
+      this.gameContainer.appendChild(labelContainer);
 
       wordLabel.innerText = this.word;
   }
