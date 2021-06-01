@@ -38,4 +38,23 @@ labelContainer {
     font-size: 38px;
 }
 
+.nextLevelButton {
+    background-color: #00509D;
+    color: #00296B;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; /* White border around icon */
+    font-size: 38px;
+
+    padding: 10px 75px;
+    border-radius: 1000px;
+    border: 0;
+
+    transition: 0.3s;
+}
+
+.nextLevelButton:hover {
+    background-color: #00296B;
+    color: #00509D;
+    cursor: pointer;
+}
+
 /* END LETTER RECOGNITION LEVEL */
