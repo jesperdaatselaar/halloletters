@@ -11,13 +11,13 @@ export default [
       {
         name: "rocket",
         word: "raket",
-        image: undefined,
+        image: ".assets/rocket.png",
         sound: "/src/sounds/moon_m.png",
       },
       {
         name: "astronaut",
         word: "astronaut",
-        image: undefined,
+        image: ".assets/astronaut.png",
         sound: "/src/sounds/moon_m.png",
       },
     ],
