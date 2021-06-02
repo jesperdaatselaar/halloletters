@@ -3,12 +3,12 @@ body {
   height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 
 /* LETTER RECOGNITION LEVEL */
 
-gameContainer {
+/* gameContainer {
   height: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -29,8 +29,8 @@ subjectContainer {
 subjectContainer img {
   background-repeat: no-repeat;
   background-size: contain;
-  width: 200px;
-  height: 200px;
+  width: 100px;
+  height: 100px;
 }
 
 labelContainer {
@@ -45,7 +45,7 @@ labelContainer {
   color: #00296b;
   text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
     1px 1px 0 #fff; /* White border around icon */
-  font-size: 38px;
+  /* font-size: 38px;
 
   padding: 10px 75px;
   border-radius: 1000px;
@@ -58,6 +58,6 @@ labelContainer {
   background-color: #00296b;
   color: #00509d;
   cursor: pointer;
-}
+} */ 
 
-/* END LETTER RECOGNITION LEVEL */
+/* END LETTER RECOGNITION LEVEL
