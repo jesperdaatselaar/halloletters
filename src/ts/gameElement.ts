@@ -32,8 +32,9 @@ export class gameElement {
   }
 
   create() {
-    this.div = document.createElement("test");
-    console.log("width", this.div.clientWidth);
+    this.div = document.createElement("gameelement");
+    game?.appendChild(this.div);
+    
     this.div.id = this.data.name;
     this.div.style.backgroundImage = `url("${
       this.data.image || "./assets/logo.png"
