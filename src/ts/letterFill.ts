@@ -19,4 +19,9 @@ export class LetterFill {
         // Display word with missing letter on screen
         this.displayWord(newWord);
     }
+
+    displayWord(newWord : string) {
+        let wordElement = document.createElement("wordElement");
+        game?.appendChild(wordElement);
+    }
 }
