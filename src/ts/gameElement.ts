@@ -1,4 +1,6 @@
 let game = document.querySelector("gamecontainer");
+
+// import {LetterFill } from "./LetterFill.js";
 export interface Element {
   name: string;
   word: string;
@@ -29,12 +31,18 @@ export class gameElement {
     console.log("New game element");
     this.data = el;
     this.create();
+    this.div.addEventListener("click", (e) => {
+      for (let i = 0; i < game!.children.length; i++) {
+        game?.children[i].remove();
+      }
+      // new letterFill(this.data);
+    });
   }
 
   create() {
     this.div = document.createElement("gameelement");
     game?.appendChild(this.div);
-    
+
     this.div.id = this.data.name;
     this.div.style.backgroundImage = `url("${
       this.data.image || "./assets/logo.png"
@@ -47,6 +55,5 @@ export class gameElement {
       Math.random() * (window.innerHeight - this.div.clientHeight)
     );
     this.div.style.transform = `translate(${this._x}px, ${this._y}px)`;
-    game?.appendChild(this.div);
   }
 }
