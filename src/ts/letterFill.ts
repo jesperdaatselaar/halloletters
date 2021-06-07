@@ -26,12 +26,16 @@ export class LetterFill {
 
     displayWord(newWord : string) {
         let wordElement = document.createElement("wordElement");
+        wordElement.innerText = newWord;
         game?.appendChild(wordElement);
     }
 
     private onKeyDown(e: KeyboardEvent): void {
         if (e.key.toUpperCase() === this.missingLetter) {
-            console.log("Correct awnser");
+            let checkmark = document.createElement("i");
+            game?.appendChild(checkmark);
+
+            checkmark.classList.add("fas fa-check");
         }
     }
 }
