@@ -9,13 +9,5 @@ gameelement {
   display: block;
   height: 300px;
   width: 300px;
-  /* background-repeat: no-repeat; */
   background-size: contain;
-}
-
-test {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  display: block;
 }
