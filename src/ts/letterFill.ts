@@ -12,6 +12,8 @@ export class LetterFill {
         window.addEventListener("keydown", (e:KeyboardEvent) => this.onKeyDown(e));
 
         this.word = "maan";
+
+        this.removeLetter();
     }
 
     removeLetter() {
