@@ -4,6 +4,7 @@ export class LetterFill {
 
     word : string;
     missingLetter : string;
+    wordElement : HTMLElement;
 
     constructor(data : []) {
         let gameElement = document.querySelector("gameElement");
@@ -27,9 +28,9 @@ export class LetterFill {
     }
 
     displayWord(newWord : string) {
-        let wordElement = document.createElement("wordElement");
-        wordElement.innerText = newWord;
-        game?.appendChild(wordElement);
+        this.wordElement = document.createElement("wordElement");
+        this.wordElement.innerText = newWord;
+        game?.appendChild(this.wordElement);
     }
 
     private onKeyDown(e: KeyboardEvent): void {
@@ -38,6 +39,8 @@ export class LetterFill {
             game?.appendChild(checkmark);
 
             checkmark.classList.add("fas fa-check");
+            // Display the full word
+            this.wordElement.innerText = this.word;
         }
     }
 }
