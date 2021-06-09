@@ -31,12 +31,6 @@ export class gameElement {
     console.log("New game element");
     this.data = el;
     this.create();
-    this.div.addEventListener("click", (e) => {
-      for (let i = 0; i < game!.children.length; i++) {
-        game?.children[i].remove();
-      }
-      // new letterFill(this.data);
-    });
   }
 
   create() {

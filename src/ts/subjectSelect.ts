@@ -16,6 +16,23 @@ export class subjectSelect {
     this.themes = themes;
     this.randomTheme();
     this.generateHTML();
+
+    window.addEventListener("click", (e) => {
+      let arrayOfEmpty: HTMLElement[] = [];
+      let gameContainer = document.querySelector("gamecontainer")!;
+      let el = e.target as HTMLElement;
+      if (el.tagName == "GAMEELEMENT") {
+        console.log(gameContainer.children);
+        for (let i = 0; i < gameContainer.children.length; i++) {
+          arrayOfEmpty.push(gameContainer.children[i] as HTMLElement);
+        }
+        for (let i = 0; i < arrayOfEmpty.length; i++) {
+          if (arrayOfEmpty[i].id != el.id) {
+            arrayOfEmpty[i].remove();
+          }
+        }
+      }
+    });
   }
 
   randomTheme() {
