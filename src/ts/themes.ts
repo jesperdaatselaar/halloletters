@@ -21,6 +21,7 @@ export default [
         sound: "/src/sounds/moon_m.png",
       },
     ],
+    background: "./assets/background.png",
   },
   {
     name: "farm",
@@ -44,5 +45,6 @@ export default [
         sound: "/src/sounds/farm_b.png",
       },
     ],
+    background: "./assets/background2.png",
   },
 ];
