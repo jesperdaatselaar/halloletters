@@ -28,19 +28,19 @@ export default [
       {
         name: "cow",
         word: "koe",
-        image: undefined,
+        image: "./assets/cow.png",
         sound: "/src/sounds/cow_k.png",
       },
       {
         name: "sheep",
         word: "schaap",
-        image: undefined,
+        image: "./assets/sheep.png",
         sound: "/src/sounds/sheep_s.png",
       },
       {
         name: "farm",
         word: "boerderij",
-        image: undefined,
+        image: "./assets/farm.png",
         sound: "/src/sounds/farm_b.png",
       },
     ],
