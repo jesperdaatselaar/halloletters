@@ -11,3 +11,7 @@ gameelement {
   width: 300px;
   background-size: contain;
 }
+
+gameelement:hover {
+  cursor: pointer;
+}
