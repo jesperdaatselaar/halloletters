@@ -4,7 +4,7 @@ import { gameElement, Element } from "./gameElement.js";
 interface Theme {
   name: string;
   elements: Element[];
-  background : string;
+  background: string;
 }
 
 export class subjectSelect {
@@ -31,6 +31,7 @@ export class subjectSelect {
             arrayOfEmpty[i].remove();
           }
         }
+        window.removeEventListener("click", () => {});
       }
     });
   }
