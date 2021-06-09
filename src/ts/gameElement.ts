@@ -38,6 +38,7 @@ export class gameElement {
     game?.appendChild(this.div);
 
     this.div.id = this.data.name;
+    this.div.dataset.word = this.data.word;
     this.div.style.backgroundImage = `url("${
       this.data.image || "./assets/logo.png"
     }")`;
