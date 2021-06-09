@@ -6,13 +6,15 @@ export class LetterFill {
     missingLetter : string;
     wordElement : HTMLElement;
 
-    constructor(data : []) {
-        let gameElement = document.querySelector("gameElement");
+    constructor(word : string) {
+        
+        let gameElement = document.querySelector("gameElement") as HTMLElement;
+        gameElement.style.transform = `translate(-50%, -50%)`;
         gameElement?.classList.add("element-center");
 
         window.addEventListener("keydown", (e:KeyboardEvent) => this.onKeyDown(e));
 
-        this.word = "maan";
+        this.word = word;
 
         this.removeLetter();
     }
@@ -38,7 +40,9 @@ export class LetterFill {
             let checkmark = document.createElement("i");
             game?.appendChild(checkmark);
 
-            checkmark.classList.add("fas fa-check");
+            checkmark.classList.add("fas");
+            checkmark.classList.add("fa-check");
+            checkmark.classList.add("checkmark");
             // Display the full word
             this.wordElement.innerText = this.word;
         }

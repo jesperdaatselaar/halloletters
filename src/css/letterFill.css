@@ -5,3 +5,22 @@
     transform: translate(-50%, -50%);
     padding: 10px;
 }
+
+wordElement {
+    color: #fff;
+    font-size: 38px;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -80%);
+}
+
+.checkmark {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #00509D;
+    font-size: 300px;
+    z-index: 1000;
+}

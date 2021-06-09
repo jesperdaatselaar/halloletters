@@ -1,5 +1,6 @@
 import themes from "./themes.js";
 import { gameElement, Element } from "./gameElement.js";
+import { LetterFill } from "./letterFill.js";
 
 interface Theme {
   name: string;
@@ -33,6 +34,8 @@ export class subjectSelect {
         }
         window.removeEventListener("click", () => {});
       }
+      window.removeEventListener("click", () => {});
+      new LetterFill(el.dataset.word!);
     });
   }
 
