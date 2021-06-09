@@ -4,6 +4,7 @@ import { gameElement, Element } from "./gameElement.js";
 interface Theme {
   name: string;
   elements: Element[];
+  background : string;
 }
 
 export class subjectSelect {
@@ -26,5 +27,10 @@ export class subjectSelect {
     for (let i = 0; i < this.currentTheme.elements.length; i++) {
       new gameElement(this.currentTheme.elements[i]);
     }
+  }
+
+  drawBackground() {
+    let root: HTMLElement = document.querySelector("gameContainer")!;
+    root.style.backgroundImage = `url("${this.currentTheme.background}")`;
   }
 }
