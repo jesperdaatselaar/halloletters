@@ -1,5 +1,5 @@
-import { Answer, Theme } from "./interfaces";
-import { Level } from "./Level";
+import { Answer, Theme } from "./interfaces.js";
+import { Level } from "./level.js";
 
 export class Assignment {
   private theme: Theme;
