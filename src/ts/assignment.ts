@@ -1,4 +1,4 @@
-import { Answer, Theme } from "./interfaces.js";
+import { Answer, Component, Theme } from "./interfaces.js";
 import { Level } from "./level.js";
 
 export class Assignment {
@@ -10,8 +10,16 @@ export class Assignment {
     return this._correctAnswer;
   }
 
-  constructor() {}
+  constructor(theme : Theme) {
+    this.theme = theme;
+    this.selectRandomAnswer(theme.components); 
+  }
 
-  private selectRandomAnswer() {}
+  private selectRandomAnswer(components : Component[]) {
+    // Get random component
+    let component = components[Math.floor(Math.random() * components.length)];
+    // Get random letter from word
+    let letter = component.word.charAt(Math.floor(Math.random() * component.word.length)).toUpperCase();
+  }
   public next(p: number): void {}
 }
