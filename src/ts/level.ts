@@ -1,4 +1,5 @@
-import { Theme } from "./interfaces";
+import { Theme } from "./interfaces.js";
+import themes from "./themes.js";
 
 export class Level {
   private level: number;
@@ -7,8 +8,13 @@ export class Level {
     return this._theme;
   }
 
-  constructor() {}
+  constructor() {
+    this.selectRandomTheme();
+  }
 
-  private selectRandomTheme() {}
+  private selectRandomTheme() {
+    this._theme = themes[Math.floor(Math.random() * themes.length)];
+    console.log(this._theme)
+  }
   public next(level: number) {}
 }
