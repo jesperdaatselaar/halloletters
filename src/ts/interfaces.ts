@@ -1,6 +1,6 @@
 export interface Theme {
   name: string;
-  Components: Component[];
+  components: Component[];
   background: string;
 }
 
