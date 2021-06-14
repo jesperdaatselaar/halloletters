@@ -2,10 +2,13 @@ import { Answer, Component, Theme } from "./interfaces.js";
 import { Level } from "./level.js";
 
 export class Assignment {
-  private theme: Theme;
+  public theme: Theme;
   private phase: number;
   private level: Level;
   private _correctAnswer: Answer;
+  private set correctAnswer(value : any){
+      this._correctAnswer = value;
+  }
   public get correctAnswer(): Answer {
     return this._correctAnswer;
   }
@@ -20,6 +23,9 @@ export class Assignment {
     let component = components[Math.floor(Math.random() * components.length)];
     // Get random letter from word
     let letter = component.word.charAt(Math.floor(Math.random() * component.word.length)).toUpperCase();
+
+    this.correctAnswer = component;
+    this.correctAnswer = letter;
   }
   public next(p: number): void {}
 }
