@@ -8,16 +8,16 @@ export class ComponentClick {
   assignment: Assignment;
 
   constructor(assignment: Assignment) {
-    console.log(assignment)
-    this.assignment = assignment;
+    console.log(assignment);
+    this.assignment = assignment as Assignment;
     this.create();
   }
 
   create(): void {
     // Add background to game
-    game!.style.backgroundImage = `url("${this.assignment.theme.background}")`;
+    game.style.backgroundImage = `url("${this.assignment.theme.background}")`;
     // Add all game components
-    for(let component of this.assignment.theme.components) {
+    for (let component of this.assignment.theme.components) {
       let gameComponent = document.createElement("gameComponent");
       game?.appendChild(gameComponent);
 
