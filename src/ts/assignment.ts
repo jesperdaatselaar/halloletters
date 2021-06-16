@@ -29,9 +29,10 @@ export class Assignment {
       .charAt(Math.floor(Math.random() * component.word.length))
       .toUpperCase();
 
-    this.correctAnswer = { component, letter };
+    this.correctAnswer = { component: component, letter: letter };
   }
   public next(): void {
+    console.log(this.phase);
     this.phase++;
     switch (this.phase) {
       case 1:
