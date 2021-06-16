@@ -11,9 +11,9 @@ export class ComponentClick {
     console.log(assignment);
     this.assignment = assignment as Assignment;
     this.create();
-    window.addEventListener("click", (e: MouseEvent) => this.handleKeyClick(e));
+    window.addEventListener("click", this.callbackClick);
+    this.callbackClick = (e: Event) => this.handleKeyClick(e);
   }
-
   create(): void {
     // Add background to game
     game.style.backgroundImage = `url("${this.assignment.theme.background}")`;
@@ -42,7 +42,7 @@ export class ComponentClick {
     // Play sound
     clickRightImageSound.play();
   }
-  handleKeyClick(e: MouseEvent): void {
+  handleKeyClick(e: Event): void {
     let element = e.target as Element;
     if (element.id === this.assignment.correctAnswer.component.name) {
       // Sound for clicking rihgt awnser
@@ -52,7 +52,7 @@ export class ComponentClick {
       // Remove all elements
       this.removeElements();
       // Remove eventListener
-      window.removeEventListener("click", () => {});
+      window.removeEventListener("click", this.callbackClick);
     } else {
       // Sound for clicking wrong awnser
       const clickedWrongImageSound = new Audio("./sounds/wrong.mp3");
