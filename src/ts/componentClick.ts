@@ -2,6 +2,7 @@ import { Assignment } from "./assignment";
 import { Component } from "./interfaces";
 
 let game = document.querySelector("game") as HTMLElement;
+const clickedWrongImageSound = new Audio("./sounds/wrong.mp3");
 
 export class ComponentClick {
   private callbackClick: EventListener;
@@ -56,9 +57,10 @@ export class ComponentClick {
       window.removeEventListener("click", this.callbackClick);
     } else {
       // Sound for clicking wrong awnser
-      const clickedWrongImageSound = new Audio("./sounds/wrong.mp3");
-      // Play sound
-      clickedWrongImageSound.play();
+      if(clickedWrongImageSound.paused) {
+        // Play sound
+        clickedWrongImageSound.play();
+      }
     }
   }
   removeElements(): void {
