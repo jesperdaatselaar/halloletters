@@ -38,7 +38,7 @@ export class Assignment {
         new ComponentClick(this);
         break;
       case 2:
-        new ComponentComplete();
+        new ComponentComplete(this);
         break;
       case 3:
         new Level();
