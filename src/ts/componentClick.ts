@@ -23,19 +23,60 @@ export class ComponentClick {
 
       gameComponent.id = component.name;
       gameComponent.dataset.word = component.word;
+
+      this.setPosition(gameComponent);
+
+      for (let child of game.children) {
+        this.checkPosition(child, gameComponent);
+      }
+
       gameComponent.style.backgroundImage = `url("${
         component.image || "./assets/logo.png"
       }")`;
-
-      let x = Math.floor(
-        Math.random() * (window.innerWidth - gameComponent.clientWidth)
-      );
-      let y = Math.floor(
-        Math.random() * (window.innerHeight - gameComponent.clientHeight)
-      );
-      gameComponent.style.transform = `translate(${x}px, ${y}px)`;
     }
   }
   handleKeyClick(e: Event): void {}
   remove(): void {}
+  collisionDetect(a: ClientRect, b: ClientRect): Boolean {
+    return (
+      a.left <= b.right &&
+      b.left <= a.right &&
+      a.top <= b.bottom &&
+      b.top <= a.bottom
+    );
+  }
+  checkPosition(child: Element, gameComponent: HTMLElement) {
+    let overlay;
+    if (child != gameComponent) {
+      overlay = this.collisionDetect(
+        child.getBoundingClientRect(),
+        gameComponent.getBoundingClientRect()
+      );
+    }
+
+    while (overlay) {
+      console.log("in while");
+
+      this.setPosition(gameComponent);
+      if (child != gameComponent) {
+        overlay = this.collisionDetect(
+          child.getBoundingClientRect(),
+          gameComponent.getBoundingClientRect()
+        );
+      }
+    }
+  }
+
+  private setPosition(gameComponent: HTMLElement) {
+    console.log("Change position");
+
+    let x = Math.floor(
+      Math.random() * (window.innerWidth - gameComponent.clientWidth)
+    );
+    let y = Math.floor(
+      Math.random() * (window.innerHeight - gameComponent.clientHeight)
+    );
+
+    gameComponent.style.transform = `translate(${x}px, ${y}px)`;
+  }
 }
