@@ -16,3 +16,13 @@ gameComponent {
 gameComponent:hover {
   cursor: pointer;
 }
+
+gameText {
+  color: white;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-30%, -50%);
+  font-size: 48px;
+  font-family: Helvetica, sans-serif;
+}
