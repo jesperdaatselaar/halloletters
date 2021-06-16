@@ -34,6 +34,7 @@ export class ComponentClick {
         component.image || "./assets/logo.png"
       }")`;
     }
+    this.remove();
   }
   handleKeyClick(e: Event): void {}
   remove(): void {

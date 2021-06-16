@@ -22,7 +22,9 @@ export class ComponentComplete {
     gameComponent.id = this.correctAnswer.component.name;
     gameComponent.dataset.word = this.correctAnswer.component.word;
 
-    gameComponent.style.transform = `translate(50vw, 50vh)`;
+    gameComponent.style.transform = `translate(-50%, -50%)`;
+    gameComponent.style.top = `50%`;
+    gameComponent.style.left = `50% `;
 
     gameComponent.style.backgroundImage = `url("${this.correctAnswer.component.image}")`;
   }
