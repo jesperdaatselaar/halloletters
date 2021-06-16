@@ -6,14 +6,15 @@ import themes from "./themes.js";
 export class Level {
   private level: number;
   private _theme: Theme;
+  private assignment: Assignment;
   public get theme(): Theme {
     return this._theme;
   }
 
   constructor() {
     this.selectRandomTheme();
-
-    new ComponentClick(new Assignment(this._theme)); 
+    this.assignment = new Assignment(this._theme);
+    this.assignment.next();
   }
 
   private selectRandomTheme() {
