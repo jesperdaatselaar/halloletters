@@ -1,3 +1,5 @@
+import { ComponentClick } from "./componentClick.js";
+import { ComponentComplete } from "./componentComplete.js";
 import { Answer, Component, Theme } from "./interfaces.js";
 import { Level } from "./level.js";
 
@@ -14,6 +16,7 @@ export class Assignment {
   }
 
   constructor(theme: Theme) {
+    this.phase = 0;
     this.theme = theme;
     this.selectRandomAnswer(theme.components);
   }
@@ -28,5 +31,20 @@ export class Assignment {
 
     this.correctAnswer = { component, letter };
   }
-  public next(p: number): void {}
+  public next(): void {
+    this.phase++;
+    switch (this.phase) {
+      case 1:
+        new ComponentClick(this);
+        break;
+      case 2:
+        new ComponentComplete();
+        break;
+      case 3:
+        new Level();
+        break;
+      default:
+        break;
+    }
+  }
 }
