@@ -34,6 +34,9 @@ export class ComponentClick {
         component.image || "./assets/logo.png"
       }")`;
     }
+    const playsound = new Audio (`"${this.assignment.correctAnswer.component.sound}"`);
+    console.log(this.assignment.correctAnswer.component.sound);
+    playsound.play
   }
   handleKeyClick(e: Event): void {}
   remove(): void {
