@@ -33,6 +33,9 @@ export class Assignment {
   }
   public next(): void {
     console.log(this.phase);
+    if (this.phase >= 3) {
+      this.phase = 0;
+    }
     this.phase++;
     switch (this.phase) {
       case 1:
