@@ -30,20 +30,22 @@ export class ComponentClick {
         this.checkPosition(child, gameComponent);
       }
 
-      gameComponent.style.backgroundImage = `url("${
-        component.image || "./assets/logo.png"
-      }")`;
+      gameComponent.style.backgroundImage = `url("${component.image || "./assets/logo.png"
+        }")`;
     }
     // Sound for right awnser
-    const clickRightImageSound = new Audio (this.assignment.correctAnswer.component.sound);
+    const clickRightImageSound = new Audio(this.assignment.correctAnswer.component.sound);
     // Play sound
     clickRightImageSound.play();
   }
-  handleKeyClick(e: Event): void {}
+  handleKeyClick(e: Event): void { }
   remove(): void {
-    // Remove all game elements
+    let arrayOfEmpty: HTMLElement[] = [];
     for (let child of game.children) {
-      child.remove();
+      arrayOfEmpty.push(child as HTMLElement);
+    }
+    for (let i = 0; i < arrayOfEmpty.length; i++) {
+      arrayOfEmpty[i].remove();
     }
     // Start next phase
     this.assignment.next();
