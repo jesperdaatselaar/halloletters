@@ -11,6 +11,7 @@ export class ComponentClick {
     console.log(assignment);
     this.assignment = assignment as Assignment;
     this.create();
+    window.addEventListener("click", (e: MouseEvent) => this.handleKeyClick(e));
   }
 
   create(): void {
@@ -34,13 +35,34 @@ export class ComponentClick {
         component.image || "./assets/logo.png"
       }")`;
     }
-    this.remove();
+    // Sound for right awnser
+    const clickRightImageSound = new Audio(
+      this.assignment.correctAnswer.component.sound
+    );
+    // Play sound
+    clickRightImageSound.play();
   }
-  handleKeyClick(e: Event): void {}
-  remove(): void {
-    // Remove all game elements
-    for (let child of game.children) {
-      child.remove();
+  handleKeyClick(e: MouseEvent): void {
+    let element = e.target as Element;
+    if (element.id === this.assignment.correctAnswer.component.name) {
+      // Sound for clicking rihgt awnser
+      const clickedRightImageSound = new Audio("./sounds/good_job.mp3");
+      // Play sound
+      clickedRightImageSound.play();
+      // Remove all elements
+      this.removeElements();
+      // Remove eventListener
+      window.removeEventListener("click", () => {});
+    } else {
+      // Sound for clicking wrong awnser
+      const clickedWrongImageSound = new Audio("./sounds/wrong.mp3");
+      // Play sound
+      clickedWrongImageSound.play();
+    }
+  }
+  removeElements(): void {
+    for (let i = game.children.length - 1; i >= 0; i--) {
+      game.children[i].remove();
     }
     // Start next phase
     this.assignment.next();
