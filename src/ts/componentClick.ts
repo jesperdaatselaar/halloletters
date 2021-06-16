@@ -11,8 +11,9 @@ export class ComponentClick {
     console.log(assignment);
     this.assignment = assignment as Assignment;
     this.create();
-    window.addEventListener("click", this.callbackClick);
     this.callbackClick = (e: Event) => this.handleKeyClick(e);
+    window.addEventListener("click", this.callbackClick);
+    
   }
   create(): void {
     // Add background to game
