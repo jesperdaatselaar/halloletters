@@ -36,7 +36,14 @@ export class ComponentClick {
     }
   }
   handleKeyClick(e: Event): void {}
-  remove(): void {}
+  remove(): void {
+    // Remove all game elements
+    for (let child of game.children) {
+      child.remove();
+    }
+    // Start next phase
+    this.assignment.next();
+  }
   collisionDetect(a: ClientRect, b: ClientRect): Boolean {
     return (
       a.left <= b.right &&
