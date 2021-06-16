@@ -11,6 +11,7 @@ export class ComponentClick {
     console.log(assignment);
     this.assignment = assignment as Assignment;
     this.create();
+    window.addEventListener("click", (e: MouseEvent) => this.handleKeyClick(e));
   }
 
   create(): void {
@@ -38,14 +39,27 @@ export class ComponentClick {
     // Play sound
     clickRightImageSound.play();
   }
-  handleKeyClick(e: Event): void { }
-  remove(): void {
-    let arrayOfEmpty: HTMLElement[] = [];
-    for (let child of game.children) {
-      arrayOfEmpty.push(child as HTMLElement);
+  handleKeyClick(e: MouseEvent): void {
+    let element = e.target as Element;
+    if (element.id === this.assignment.correctAnswer.component.name) {
+      // Sound for clicking rihgt awnser
+      const clickedRightImageSound = new Audio("./sounds/good_job.mp3");
+      // Play sound
+      clickedRightImageSound.play();
+      // Remove all elements
+      this.removeElements();
+      // Remove eventListener 
+      window.removeEventListener("click", () => {});
+    } else {
+       // Sound for clicking wrong awnser
+       const clickedWrongImageSound = new Audio("./sounds/wrong.mp3");
+       // Play sound
+       clickedWrongImageSound.play();
     }
-    for (let i = 0; i < arrayOfEmpty.length; i++) {
-      arrayOfEmpty[i].remove();
+  }
+  removeElements(): void {
+    for (let i = game.children.length - 1; i >= 0; i--) {
+      game.children[i].remove()
     }
     // Start next phase
     this.assignment.next();
