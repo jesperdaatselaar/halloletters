@@ -2,6 +2,7 @@ import { Assignment } from "./assignment";
 import { Answer } from "./interfaces";
 
 let levelCompleteAudio = new Audio("./sounds/level-complete.mp3");
+let clickedWrongImageSound = new Audio("./sounds/wrong.mp3");
 
 export class ComponentComplete {
   private callbackKeyDown: EventListener;
@@ -34,7 +35,6 @@ export class ComponentComplete {
       " _ "
     );
 
-    console.log(this.correctAnswer.letter);
     game?.appendChild(gameComponent);
     game?.appendChild(this.gameText);
 
@@ -54,6 +54,12 @@ export class ComponentComplete {
       this.gameText.innerHTML = this.correctAnswer.component.word;
       // Play complete levelCompleteAudio
       levelCompleteAudio.play();
+    } else {
+      // Sound for typing wrong awnser
+      if(clickedWrongImageSound.paused) {
+        // Play sound
+        clickedWrongImageSound.play();
+      }
     }
   }
   remove(): void {
