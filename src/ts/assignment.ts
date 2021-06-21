@@ -32,7 +32,6 @@ export class Assignment {
     this.correctAnswer = { component: component, letter: letter };
   }
   public next(): void {
-    console.log(this.phase);
     if (this.phase >= 3) {
       this.phase = 0;
     }
