@@ -58,13 +58,13 @@ export default [
       },
       {
         name: "bush",
-        word: "bosje",
+        word: "struik",
         image: "./assets/forest/bush.png",
         sound: "./sounds/forest/bush.mp3",
       },
       {
         name: "twig",
-        word: "takje",
+        word: "tak",
         image: "./assets/forest/twig.png",
         sound: "./sounds/forest/twig.mp3",
       },
