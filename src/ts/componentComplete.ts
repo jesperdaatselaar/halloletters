@@ -65,10 +65,11 @@ export class ComponentComplete {
   remove(): void {
     document.querySelector("gameComponent")?.remove();
     document.querySelector("gameText")?.remove();
+    this.assignment.next();
   }
 
   private handleAudioEventListener() {
+    levelCompleteAudio.removeEventListener("ended", this.callAudioDone);
     this.remove();
-    this.assignment.next();
   }
 }
