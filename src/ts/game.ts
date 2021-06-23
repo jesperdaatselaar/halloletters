@@ -1,8 +1,9 @@
-import { subjectSelect } from "./subjectSelect.js";
+import { Level } from "./level.js";
 
-export class game {
+export class Game {
   constructor() {
-    console.log("Game started");
-    new subjectSelect();
+    new Level();
   }
 }
+
+new Game();
